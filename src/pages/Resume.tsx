@@ -1,11 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 
-type Props = {}
+type Props = {};
 
 const Resume = (props: Props) => {
-  return (
-    <div>Resume</div>
-  )
-}
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
+            Resume
+        </motion.div>
+    );
+};
 
-export default Resume
+export default Resume;

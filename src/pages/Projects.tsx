@@ -1,11 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 
-type Props = {}
+type Props = {};
 
 const Projects = (props: Props) => {
-  return (
-    <div>Projects</div>
-  )
-}
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+        >
+            Projects
+        </motion.div>
+    );
+};
 
-export default Projects
+export default Projects;

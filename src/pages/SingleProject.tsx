@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 
-type Props = {}
+type Props = {};
 
 const SingleProject = (props: Props) => {
-  return (
-    <div>SingleProject</div>
-  )
-}
+    return <div>SingleProject</div>;
+};
 
-export default SingleProject
+export default SingleProject;

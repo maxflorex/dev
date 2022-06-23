@@ -1,4 +1,6 @@
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import axios from 'axios';
+import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './components/navigation/Footer';
@@ -25,18 +27,31 @@ function App() {
             });
     }, []);
 
+    // APOLLO CLIENT
+    const client = new ApolloClient({
+        uri: 'http://localhost:1337/graphql',
+        cache: new InMemoryCache(),
+    });
+
     return (
         <AppContext.Provider value={{ photos }}>
             <Router>
-                <Navbar />
-                <Routes>
-                    <Route path={'/'} element={<Home />} />
-                    <Route path={'/about'} element={<About />} />
-                    <Route path={'/projects'} element={<Projects />} />
-                    <Route path={'/projects/:id'} element={<SingleProject />} />
-                    <Route path={'/resume'} element={<Resume />} />
-                </Routes>
-                <Footer />
+                <ApolloProvider client={client}>
+                    <Navbar />
+                    <AnimatePresence>
+                        <Routes>
+                            <Route path={'/'} element={<Home />} />
+                            <Route path={'/about'} element={<About />} />
+                            <Route path={'/projects'} element={<Projects />} />
+                            <Route
+                                path={'/projects/:id'}
+                                element={<SingleProject />}
+                            />
+                            <Route path={'/resume'} element={<Resume />} />
+                        </Routes>
+                    </AnimatePresence>
+                    <Footer />
+                </ApolloProvider>
             </Router>
         </AppContext.Provider>
     );
