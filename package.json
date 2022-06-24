@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
+    "@splinetool/react-spline": "^2.2.1",
+    "@splinetool/runtime": "^0.9.69",
     "axios": "^0.27.2",
     "framer-motion": "^6.3.13",
     "graphql": "^16.5.0",

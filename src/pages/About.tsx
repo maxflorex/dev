@@ -9,8 +9,14 @@ const About = (props: Props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            className='w-full'
         >
-            About
+            <iframe
+                src="https://my.spline.design/untitled-526d498b3a51d74f0bd492a2f47db0a7/"
+                frameBorder="24"
+                width="100%"
+                className="h-96 w-80"
+            />
         </motion.div>
     );
 };
