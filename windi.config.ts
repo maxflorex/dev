@@ -1,5 +1,6 @@
 import { defineConfig } from 'windicss/helpers'
 import formsPlugin from 'windicss/plugin/forms'
+const defaultTheme = require("windicss/defaultTheme");
 
 export default defineConfig({
     darkMode: 'class',
@@ -7,9 +8,15 @@ export default defineConfig({
     theme: {
         extend: {
             colors: {
-                teal: {
-                    100: '#096',
-                },
+                off: '#f6ebe4',
+                azul: '#23bbd5',
+                nara: '#e49a35',
+                rosa: '#f37264',
+                navy: '#16405a'
+            },
+            fontFamily: {
+                sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+                serif: ["Corben", ...defaultTheme.fontFamily.serif],
             },
         },
     },
@@ -17,6 +24,8 @@ export default defineConfig({
     shortcuts: {
         'btn': 'py-2 px-4 font-bold text-xl rounded-lg shadow bg-teal-500',
         'flex-center': 'flex flex-col items-center justify-center w-full h-full gap-4 p-8',
-        'grid-4': 'grid grid-cols-4 w-full gap-4 content-center'
+        'flex-between': 'flex items-center justify-between w-full h-full gap-4 p-8',
+        'grid-4': 'grid grid-cols-4 w-full gap-4 content-center',
+        'grid-2': 'grid lg:grid-cols-2 w-full gap-4 content-center'
     }
 })
