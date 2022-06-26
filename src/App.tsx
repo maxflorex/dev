@@ -14,7 +14,6 @@ import { AppContext } from './utils/context/AppContext';
 
 function App() {
     const [photos, setPhotos] = useState('');
-    const [w, setW] = useState();
 
     useEffect(() => {
         axios
@@ -35,7 +34,7 @@ function App() {
     });
 
     return (
-        <AppContext.Provider value={{ photos, w, setW }}>
+        <AppContext.Provider value={{ photos }}>
             <Router>
                 <ApolloProvider client={client}>
                     <Navbar />

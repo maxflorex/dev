@@ -2,9 +2,8 @@ import React, { FC } from 'react';
 import Animation from '../components/01-home/Spline.js';
 import { motion } from 'framer-motion';
 import { gql, useQuery } from '@apollo/client';
-import Tri from '../components/Tri.js';
 import logoName from '../assets/LOGOTYPE-08.svg';
-import Slides from '../components/carousel/Slides.js';
+import SlidesTechLove from '../components/carousel/SlidesTechLove.js';
 
 // const PROJECTS = gql`
 //     query projects {
@@ -49,7 +48,7 @@ const Home: FC = () => {
                     <Animation />
                 </div>
             </motion.div>
-            <Slides />
+            <SlidesTechLove />
         </>
     );
 };
