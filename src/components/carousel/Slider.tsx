@@ -4,6 +4,7 @@ import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import ArrowContainer from '../ArrowContainer';
 import usePrev from '../../hooks/usePrev';
 import useNext from '../../hooks/useNext';
+import { variants } from '../../utils/animations/animate';
 
 type Props = {
     children: JSX.Element;
@@ -18,7 +19,7 @@ const Slider = ({
     navigation = true,
     autoplay = true,
     speed = 500,
-    interval = 5000,
+    interval = 8000,
 }: Props) => {
     const slideshow = useRef(undefined);
     const slideshowIntervals = useRef(undefined);
@@ -32,17 +33,17 @@ const Slider = ({
                 next();
             }, interval);
 
-            // DELETE INTERVALS
-            slideshow.current.addEventListener('mouseenter', () => {
-                clearInterval(slideshowIntervals.current);
-            });
+            // // DELETE INTERVALS
+            // slideshow.current.addEventListener('mouseenter', () => {
+            //     clearInterval(slideshowIntervals.current);
+            // });
 
-            // PUT BACK INTERVALS WHEN MOUSE LEAVE
-            slideshow.current.addEventListener('mouseleave', () => {
-                slideshowIntervals.current = setInterval(() => {
-                    next();
-                }, interval);
-            });
+            // // PUT BACK INTERVALS WHEN MOUSE LEAVE
+            // slideshow.current.addEventListener('mouseleave', () => {
+            //     slideshowIntervals.current = setInterval(() => {
+            //         next();
+            //     }, interval);
+            // });
         }
     }, [autoplay, interval, next]);
 
@@ -50,12 +51,12 @@ const Slider = ({
         <div className="relative">
             <div className="relative w-full">
                 <div className="relative overflow-hidden md:rounded-xl box">
-                    <div
+                    <motion.div
                         ref={slideshow}
                         className="flex flex-nowrap w-full cursor-pointer"
                     >
                         {children}
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             {navigation && (

@@ -12,7 +12,7 @@ const ArrowContainer = (props: Props) => {
             } cursor-pointer z-40`}
         >
             <div
-                className={`flex items-center bg-white/20 rounded-lg p-4 backdrop-blur-sm hover:bg-cream-500/30 shadow-lg`}
+                className={`flex items-center bg-off/20 hover:bg-off rounded-lg p-4`}
                 onClick={props.click}
             >
                 {props.children}
