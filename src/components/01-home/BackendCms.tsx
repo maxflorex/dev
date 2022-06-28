@@ -17,9 +17,9 @@ const BackendCms = (props: Props) => {
     return (
         <div className='mx-4 pb-36 mt-44'>
             <div className="flex justify-center">
-                <h1 className='md:bg-navy px-16 md:px-4 py-2 rounded-sm text-sm md:text-lg md:text-off lg:-mb-16 mb-8 z-20 md:font-semibold tracking-wide text-navy text-center hidden md:block mt-8'>Sometimes a frontend developer has to wear the fullstack cape 🦸</h1>
+                <h1 className='md:bg-navy px-16 md:px-4 py-2 rounded-sm text-sm md:text-lg md:text-off lg:-mb-20 mb-8 z-20 md:font-semibold tracking-wide text-navy text-center hidden md:block mt-8'>Sometimes a frontend developer has to wear the fullstack cape 🦸</h1>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto gap-12 md:gap-16 md:mb-40 h-64">
+            <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto gap-12 md:gap-16 md:mb-40 h-80">
                 <div className="bg-off/50 hover:bg-off flex-center rounded-sm">
                     <p>What I use</p>
                     <h1 className="font-serif text-xl md:text-2xl">

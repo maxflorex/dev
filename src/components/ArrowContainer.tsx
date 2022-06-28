@@ -7,12 +7,12 @@ type Props = {
 const ArrowContainer = (props: Props) => {
     return (
         <div
-            className={`h-full flex items-center absolute top-0 ${
-                props.direction === 'left' ? 'left-2' : 'right-2'
-            } cursor-pointer z-40`}
+            className={`cursor-pointer z-40 flex items-end absolute md:(right-16 items-center bottom-auto) right-0 bottom-8 ${
+                props.direction === 'left' ? 'mr-28' : 'ml-24'
+            }`}
         >
             <div
-                className={`flex items-center bg-off/20 hover:bg-off rounded-lg p-4`}
+                className={`flex items-center hover:bg-rosa rounded-lg p-4`}
                 onClick={props.click}
             >
                 {props.children}

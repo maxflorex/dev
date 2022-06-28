@@ -10,6 +10,7 @@ const SlidesTechLove = () => {
     const [show, setShow] = useState('');
 
     const { data } = useQuery(STACK);
+    
 
     return (
         <>
@@ -17,7 +18,7 @@ const SlidesTechLove = () => {
                 <h1 className="text-2xl font-serif mx-8">
                     Technologies I love ❤️
                 </h1>
-                <Slider navigation={true} autoplay={false}>
+                <Slider navigation={false} autoplay={true}>
                     {data &&
                         data?.techStacks?.data.map((data: any, i: any) => {
                             let imageUrl =

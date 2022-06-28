@@ -1,10 +1,9 @@
 import { useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import ArrowContainer from '../ArrowContainer';
 import usePrev from '../../hooks/usePrev';
 import useNext from '../../hooks/useNext';
-import { variants } from '../../utils/animations/animate';
 
 type Props = {
     children: JSX.Element;
@@ -62,10 +61,16 @@ const Slider = ({
             {navigation && (
                 <div className="z-20 w-full h-full flex my-auto box-border items-center">
                     <ArrowContainer direction="left" click={previous}>
-                        <FiArrowLeft className="text-navy-500" />
+                        <div className="flex gap-2 items-center">
+                            <FiArrowLeft className="text-navy-500" />
+                            <p>Prev</p>
+                        </div>
                     </ArrowContainer>
                     <ArrowContainer direction="right" click={next}>
-                        <FiArrowRight />
+                        <div className="flex gap-2 items-center">
+                            <p>Next</p>
+                            <FiArrowRight />
+                        </div>
                     </ArrowContainer>
                 </div>
             )}
