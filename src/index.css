@@ -11,3 +11,10 @@
     -webkit-text-fill-color: transparent;
 
 }
+
+.img-gray {
+    filter: 'grayscale(100%)
+}
+.img-gray:hover {
+    filter: 'grayscale(0%)
+}

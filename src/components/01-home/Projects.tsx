@@ -13,8 +13,8 @@ const Projects = (props: Props) => {
 
     return (
         <div className="container mx-auto pt-32">
-            <h1 className="text-6xl md:text-4xl text-2xl text-center font-bold mx-auto text-navy">
-                Some Things I’ve Built
+            <h1 className="lg:text-4xl text-3xl text-center font-semibold mx-auto text-navy pb-16">
+                Some Projects I’ve Built
             </h1>
             <SliderProjects />
         </div>

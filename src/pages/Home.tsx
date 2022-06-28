@@ -5,6 +5,9 @@ import { gql, useQuery } from '@apollo/client';
 import logoName from '../assets/LOGOTYPE-08.svg';
 import SlidesTechLove from '../components/carousel/SlidesTechLove.js';
 import Projects from '../components/01-home/Projects';
+import BackendCms from '../components/01-home/BackendCms.js';
+import HireMe from '../components/01-home/HireMe.js';
+import AboutMe from '../components/01-home/AboutMe.js';
 
 const Home: FC = () => {
     return (
@@ -27,6 +30,9 @@ const Home: FC = () => {
             </div>
             <SlidesTechLove />
             <Projects />
+            <BackendCms />
+            <HireMe />
+            <AboutMe />
         </>
     );
 };
