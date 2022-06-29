@@ -15,7 +15,7 @@ const Projects = (props: Props) => {
     return (
         <div className="container mx-auto pt-32">
             <div className="flex-between">
-                <h1 className="lg:text-4xl text-3xl text-left px-8 text-navy font-serif">
+                <h1 className="lg:text-5xl text-4xl text-left px-8 text-navy font-serif">
                     Some Projects I’ve Built
                 </h1>
                 <Link to="/projects" className="btn">

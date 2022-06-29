@@ -4,6 +4,11 @@
     transition: 0.4s ease-in-out;
 }
 
+#root {
+    min-height: 100vh;
+    overflow: auto;
+}
+
 .textgradient {
     background: #F6EBE4;
     background: linear-gradient(to right, #F6EBE4 0%, #23BBD5 49%, #F37264 81%);

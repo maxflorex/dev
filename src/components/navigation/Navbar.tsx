@@ -16,20 +16,26 @@ const Navbar = (props: Props) => {
     };
 
     return (
-        <div className="flex-between z-10 fixed top-0 w-full items-start">
-            <Link to="/">
-                <img src={logo} alt="Logo" className="w-8 h-8 h-full top-0" />
-            </Link>
-            <nav className="flex gap-8 children:(no-underline text-off font-light font-serif)">
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-                <Link to="/projects">Projects</Link>
-                <span className="cursor-pointer" onClick={handleClick}>
-                    Contact
-                </span>
-            </nav>
+        <>
+            <div className="flex-between bg-navy z-50">
+                <Link to="/">
+                    <img
+                        src={logo}
+                        alt="Logo"
+                        className="w-8 h-8 h-full top-0 hover:(animate-spin animate-duration-500"
+                    />
+                </Link>
+                <nav className="flex gap-8 children:(no-underline text-off font-light font-serif)">
+                    {/* <Link to="/">Home</Link> */}
+                    <Link to="/about">About</Link>
+                    <Link to="/projects">Projects</Link>
+                    <span className="cursor-pointer" onClick={handleClick}>
+                        Contact
+                    </span>
+                </nav>
+            </div>
             {showContact && <ContactModal setShowContact={setShowContact} />}
-        </div>
+        </>
     );
 };
 

@@ -18,7 +18,7 @@ const SlidesTechLove = () => {
                 <h1 className="text-2xl font-serif mx-8">
                     Technologies I love ❤️
                 </h1>
-                <Slider navigation={false} autoplay={true}>
+                <Slider navigation={false} autoplay={true} interval={4000}>
                     {data &&
                         data?.techStacks?.data.map((data: any, i: any) => {
                             let imageUrl =

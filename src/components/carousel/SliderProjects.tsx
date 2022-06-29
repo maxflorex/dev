@@ -2,6 +2,7 @@ import { useQuery } from '@apollo/client';
 import { PROJECTS } from '../../graphql/Queries';
 import Slider from './Slider';
 import { BsGithub, BsGlobe } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const SliderProjects = () => {
     const { data } = useQuery(PROJECTS);
@@ -21,19 +22,20 @@ const SliderProjects = () => {
                                 key={i}
                                 className="slidesingle flex flex-col md:flex-row gap-4 items-center box-border"
                             >
-                                <section className="border border-off/20 outline-8 my-0 rounded-sm overflow-hidden w-full">
+                                <section className="border border-off/20 outline-8 my-0 rounded-sm overflow-hidden w-full relative">
                                     <img
                                         src={`http://localhost:1337${banner}`}
                                         alt="Logo Tech"
                                         className="object-contain w-full shadow opacity-50 hover:opacity-80 rounded-sm"
                                         // style={{filter: 'grayscale(100%)'}}
                                     />
+                                    <Link to={`/projects/${data.id}`} className='btn2 absolute md:(top-4 left-4 bottom-auto right-auto) bottom-4 right-4'>View Full Project</Link>
                                 </section>
                                 <section className="flex flex-col gap-4 py-4 w-full">
                                     <div className="flex-between my-0">
-                                        <h1 className="text-4xl font-serif text-center md:text-left">
+                                        <Link to={`/projects/${data.id}`} className="text-4xl font-serif text-center md:text-left hover:scale-110">
                                             {data.attributes.Title}
-                                        </h1>
+                                        </Link>
                                         <div className="flex gap-8 pr-8 text-rosa">
                                             <a href={data.attributes.Github}>
                                                 <BsGithub />

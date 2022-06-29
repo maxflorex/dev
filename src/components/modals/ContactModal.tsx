@@ -28,7 +28,7 @@ const ContactModal = ({ setShowContact }: Props) => {
                     duration: 0.3,
                 },
             }}
-            className="fixed bg-white dismiss flex-center top-0 left-0 overflow-hidden dismiss z-50"
+            className="fixed bg-white/95 dismiss flex-center top-0 left-0 overflow-hidden dismiss z-50 backdrop-blur-2xl"
             onClick={handleClick}
         >
             <AiOutlineClose className='fixed top-8 right-8 text-2xl dismiss cursor-pointer hover:animate-spin' onClick={handleClick}/>

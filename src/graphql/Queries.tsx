@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const STACK = gql`
     query techStack {
-        techStacks {
+        techStacks(pagination: { limit: 100 }) {
             data {
                 attributes {
                     Title
@@ -23,6 +23,7 @@ export const PROJECTS = gql`
     query projects {
         projects {
             data {
+                id
                 attributes {
                     Title
                     Website
@@ -30,7 +31,52 @@ export const PROJECTS = gql`
                     Summary
                     Complexity
                     Features
-                    tech_stacks {
+                    tech_stacks(pagination: { limit: 100 }) {
+                        data {
+                            attributes {
+                                Title
+                            }
+                        }
+                    }
+                    Banner {
+                        data {
+                            attributes {
+                                url
+                            }
+                        }
+                    }
+                    Photos {
+                        data {
+                            attributes {
+                                url
+                            }
+                        }
+                    }
+                    Responsive {
+                        data {
+                            attributes {
+                                url
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
+
+export const PROJECT = gql`
+    query project ($id: ID!) {
+        project(id: $id) {
+            data {
+                attributes {
+                    Title
+                    Website
+                    Github
+                    Summary
+                    Complexity
+                    Features
+                    tech_stacks(pagination: { limit: 100 }) {
                         data {
                             attributes {
                                 Title

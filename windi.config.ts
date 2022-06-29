@@ -22,6 +22,7 @@ export default defineConfig({
     },
     plugins: [formsPlugin],
     shortcuts: {
+        'btn2': 'py-2 px-4 font-semibold rounded-sm bg-azul hover:bg-navy text-off',
         'btn': 'py-2 px-4 font-semibold rounded-sm bg-navy hover:bg-azul text-off',
         'flex-center': 'flex flex-col items-center justify-center w-full h-full gap-4 p-8',
         'flex-between': 'flex items-center justify-between w-full h-full gap-4 p-8',

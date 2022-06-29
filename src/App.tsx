@@ -9,8 +9,10 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
-import SingleProject from './pages/SingleProject';
+import SingleProject from './utils/SingleProject';
 import { AppContext } from './utils/context/AppContext';
+import ProjectSingle from './pages/ProjectSingle';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
     const [photos, setPhotos] = useState('');
@@ -37,20 +39,25 @@ function App() {
         <AppContext.Provider value={{ photos }}>
             <Router>
                 <ApolloProvider client={client}>
-                    <Navbar />
-                    <AnimatePresence>
-                        <Routes>
-                            <Route path={'/'} element={<Home />} />
-                            <Route path={'/about'} element={<About />} />
-                            <Route path={'/projects'} element={<Projects />} />
-                            <Route
-                                path={'/projects/:id'}
-                                element={<SingleProject />}
-                            />
-                            <Route path={'/resume'} element={<Resume />} />
-                        </Routes>
-                    </AnimatePresence>
-                    <Footer />
+                    <ScrollToTop>
+                        <Navbar />
+                        <AnimatePresence>
+                            <Routes>
+                                <Route path={'/'} element={<Home />} />
+                                <Route path={'/about'} element={<About />} />
+                                <Route
+                                    path={'/projects'}
+                                    element={<Projects />}
+                                />
+                                <Route
+                                    path={'/projects/:id'}
+                                    element={<ProjectSingle />}
+                                />
+                                <Route path={'/resume'} element={<Resume />} />
+                            </Routes>
+                        </AnimatePresence>
+                        <Footer />
+                    </ScrollToTop>
                 </ApolloProvider>
             </Router>
         </AppContext.Provider>
