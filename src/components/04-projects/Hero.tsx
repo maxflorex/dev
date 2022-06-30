@@ -4,7 +4,10 @@ type Props = {}
 
 const Hero = (props: Props) => {
   return (
-    <div>Hero</div>
+    <div className='flex-center bg-navy pt-16 pb-32 gap-0' >
+    <p className='text-rosa'>- Browse - </p>
+      <h1 className='font-serif text-off text-6xl text-center'>Projects</h1>
+  </div>
   )
 }
 

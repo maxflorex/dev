@@ -13,6 +13,7 @@ import SingleProject from './utils/SingleProject';
 import { AppContext } from './utils/context/AppContext';
 import ProjectSingle from './pages/ProjectSingle';
 import ScrollToTop from './components/ScrollToTop';
+import ComingSoon from './components/ComingSoon';
 
 function App() {
     const [photos, setPhotos] = useState('');
@@ -54,6 +55,10 @@ function App() {
                                     element={<ProjectSingle />}
                                 />
                                 <Route path={'/resume'} element={<Resume />} />
+                                <Route
+                                    path={'/coming-soon'}
+                                    element={<ComingSoon />}
+                                />
                             </Routes>
                         </AnimatePresence>
                         <Footer />

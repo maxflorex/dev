@@ -62,7 +62,7 @@ const Navigate = ({ proId }: Props) => {
             </div>
             <div className="py-24 flex-center">
                 <Link
-                    to="/"
+                    to="/coming-soon"
                     className=" mx-auto text-4xl leading-none py-auto flex flex-col gap-2 group"
                 >
                     <h1 className="text-3xl md:text-4xl text-center group-hover:text-rosa font-200">

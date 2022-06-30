@@ -2,14 +2,21 @@ import { Link } from 'react-router-dom';
 
 const Navigate = () => {
     return (
-        <div className="container mx-auto  md:w-1/2 rounded-sm mt-32 md:mb-0 mb-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 py-24 gap-12 text-navy px-8 bg-off">
-                <div className="flex flex-col items-start oddy">
-                    <h3 className="text-xs font-serif">Project</h3>
-                    <Link to={`/projects/`} className="font-serif text-3xl ">
-                        Title
-                    </Link>
-                </div>
+        <div className="container mx-auto  md:w-1/2 rounded-sm mt-32 md:mb-40 mb-0 bg-azul py-48">
+            <h1 className='text-center mb-8'>Check Out My Other Porfolios</h1>
+            <div className="grid grid-cols-2 items-center gap-16 text-off">
+                <a
+                    href="https://photos.maxflores.dev"
+                    className="font-serif text-2xl md:text-3xl place-self-end"
+                >
+                    Photography
+                </a>
+                <a
+                    href="https://design.maxflores.dev"
+                    className="font-serif text-2xl md:text-3xl "
+                >
+                    Graphic Design
+                </a>
             </div>
         </div>
     );
