@@ -33,3 +33,10 @@ body::-webkit-scrollbar-thumb,
     background-color: #00000040;
     border-radius: 9999px;
 }
+
+.oddy:nth-child(odd) {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}

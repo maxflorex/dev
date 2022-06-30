@@ -1,5 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Header from '../components/03-about/Header';
+import Intro from '../components/03-about/Intro';
+import Developer from '../components/03-about/Developer';
+import Designer from '../components/03-about/Designer';
+import Navigate from '../components/03-about/Navigate';
+import Outro from '../components/03-about/Outro';
 
 type Props = {};
 
@@ -9,14 +15,14 @@ const About = (props: Props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className='w-full'
+            className="w-full"
         >
-            <iframe
-                src="https://my.spline.design/untitled-526d498b3a51d74f0bd492a2f47db0a7/"
-                frameBorder="24"
-                width="100%"
-                className="h-96 w-80"
-            />
+            <Header />
+            <Intro />
+            <Developer />
+            <Designer />
+            <Outro />
+            <Navigate />
         </motion.div>
     );
 };

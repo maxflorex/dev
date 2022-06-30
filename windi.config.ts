@@ -29,6 +29,8 @@ export default defineConfig({
         'grid-4': 'grid grid-cols-4 w-full gap-4 content-center',
         'grid-2': 'grid lg:grid-cols-2 w-full gap-4 content-center',
         'slidew': 'min-w-1/4 md:min-w-1/6 lg:min-w-1/8 xl:min-w-1/10',
-        'slidesingle': 'min-w-full'
+        'slidesingle': 'min-w-full',
+        'contain' : 'container mx-auto w-full px-4 flex justify-center items-center gap-4',
+        'h1' : 'font-serif md:text-3xl text-4xl'
     }
 })

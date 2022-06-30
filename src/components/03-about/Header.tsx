@@ -1,11 +1,12 @@
 import React from 'react'
 
-type Props = {}
-
-const Header = (props: Props) => {
+const Header = () => {
   return (
-    <div>Header</div>
-  )
-}
+      <div className='flex-center bg-navy pt-16 pb-32 gap-0' >
+        <p className='text-rosa'>- Hello World! - </p>
+          {/* <h1 className='font-serif text-off text-6xl text-center'>I'm Max Flores</h1> */}
+      </div>
+  );
+};
 
 export default Header

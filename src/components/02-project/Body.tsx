@@ -33,6 +33,7 @@ const Body = ({ pro }: Project) => {
                             pro.Photos.data.map((data: any, i: number) => {
                                 return (
                                     <img
+                                        key={i}
                                         src={`http://localhost:1337${data.attributes.url}`}
                                         alt="Banner"
                                         className="w-full object-cover h-full self-start border-solid-4 border-off/40 rounded-sm hover:scale-105 cursor-pointer"
@@ -49,6 +50,7 @@ const Body = ({ pro }: Project) => {
                             pro.Responsive.data.map((data: any, i: number) => {
                                 return (
                                     <img
+                                        key={i}
                                         src={`http://localhost:1337${data.attributes.url}`}
                                         alt="Banner"
                                         className="w-full object-cover h-full self-start border-solid-4 border-off/40 rounded-sm hover:scale-105 cursor-pointer"

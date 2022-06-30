@@ -58,7 +58,7 @@ const SlidesTechLove = () => {
                                                             opacity: 1,
                                                         }}
                                                         transition={{
-                                                            duration: 0.5,
+                                                            duration: 0.3,
                                                         }}
                                                         className="absolute w-full flex items-center justify-center pt-2"
                                                     >
