@@ -10,7 +10,7 @@ const ProjectList = (props: Props) => {
     const project: any = data?.projects?.data;
 
     return (
-        <div className="w-full rounded-md py-16 px-8 container mx-auto flex flex-col gap-24 mb-24">
+        <div className="w-full rounded-md py-16 md:px-8 px-4 container mx-auto flex flex-col gap-24 mb-24">
             {data &&
                 project?.map((data: any, i: number) => {
                     const banner =
@@ -37,14 +37,14 @@ const ProjectList = (props: Props) => {
                                 </Link>
                             </section>
                             <section className="flex flex-col gap-4 py-4 w-full md:px-16 px-0">
-                                <div className="flex-between my-0">
+                                <div className="flex justify-between items-center my-0 md:pl-8 flex-wrap gap-2">
                                     <Link
                                         to={`/projects/${data.id}`}
                                         className="text-4xl font-serif text-center md:text-left hover:scale-110"
                                     >
                                         {data.attributes.Title}
                                     </Link>
-                                    <div className="flex gap-8 pr-8 text-azul">
+                                    <div className="flex gap-8 md:pr-8 text-azul">
                                         <a href={data.attributes.Github}>
                                             <BsGithub />
                                         </a>
@@ -53,10 +53,10 @@ const ProjectList = (props: Props) => {
                                         </a>
                                     </div>
                                 </div>
-                                <p className="leading-loose text-justify px-8">
+                                <p className="leading-loose text-justify md:px-8 px-0">
                                     {data.attributes.Summary}
                                 </p>
-                                <div className="flex gap-4 justify-between flex-wrap-reverse mt-8 pl-8">
+                                <div className="flex gap-4 justify-between flex-wrap-reverse mt-2 md:(pl-8 mt-8)pl-0">
                                     <ul className="flex gap-4 flex-wrap">
                                         {stack.map((data: any, i: number) => (
                                             <li

@@ -7,7 +7,7 @@ type Props = {
 const ArrowContainer = (props: Props) => {
     return (
         <div
-            className={`cursor-pointer z-40 flex items-end absolute md:(right-16 items-center bottom-auto) right-0 bottom-8 ${
+            className={`cursor-pointer z-40 flex items-end absolute justify-center md:(right-16 items-center bottom-auto justify-center) right-0 -bottom-16 ${
                 props.direction === 'left' ? 'mr-28' : 'ml-24'
             }`}
         >

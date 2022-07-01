@@ -4,7 +4,7 @@ type Props = {};
 
 const Designer = (props: Props) => {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto w-2/3 py-24">
+        <div className="grid grid-cols-1 lg:(grid-cols-2 w-2/3 px-0) container mx-auto w-full py-0 px-4">
             <div className="flex flex-col items-start py-16 px-0 w-full lg:(px-16 ml-40 -mb-40 -mr-40 mt-40) gap-16  z-20">
                 <h1 className="font-serif text-4xl">A Web Developer</h1>
                 <p className="text-justify leading-loose lg:(bg-off/90 backdrop-blur-lg p-8 -m-8) ">
@@ -29,7 +29,7 @@ const Designer = (props: Props) => {
             <div></div>
             <div className="py-4 flex flex-col gap-4 items-end lg:w-2/3 ml-auto justify-end">
                 <h3 className="font-serif italic">
-                    Some of my favorite apps for design:
+                    Some of my favorite apps for development:
                 </h3>
                 <ul className="flex flex-wrap gap-4 children:(bg-off py-1 px-2 rounded-sm) items-end ">
                        <li>Typescript</li>

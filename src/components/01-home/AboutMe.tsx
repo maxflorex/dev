@@ -6,14 +6,14 @@ type Props = {};
 
 const AboutMe = (props: Props) => {
     return (
-        <div className="container mx-auto px-4 bg-azul md:mb-40 rounded-sm">
+        <div className="container mx-auto px-8 bg-azul md:mb-40 rounded-sm">
             <div className="flex flex-col py-16">
                 <img
                     src={pic}
                     alt="3d"
                     className="h-96 -mt-40 object-contain"
                 />
-                <div className="flex flex-col gap-4 place-content-center pb-16  lg:w-1/2 mx-auto px-16">
+                <div className="flex flex-col gap-4 place-content-center pb-16  md:(w-2/3 px-8) mx-auto lg:(w-1/2)">
                     <h1 className="font-serif text-4xl text-left">Who am I?</h1>
                     <p className="leading-loose text-justify pt-4">
                         I am a web developer with an extensive background in

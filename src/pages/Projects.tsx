@@ -8,12 +8,12 @@ type Props = {};
 const Projects = (props: Props) => {
     return (
         <motion.div
-            initial={{ y: '-100%' }}
-            animate={{ y: 0 }}
-            transition={{
-                x: { type: "spring", stiffness: 100 },
-                default: { duration: 0.2 },
-              }}
+            // initial={{ opacity: 0, x: "-100%" }}
+            // animate={{ opacity: 1, x: 0 }}
+            // transition={{
+            //     x: { type: "spring", stiffness: 100 },
+            //     default: { duration: 0.2 },
+            //   }}
         >
             <Hero />
             <ProjectList />

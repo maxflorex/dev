@@ -10,19 +10,19 @@ const Home: FC = () => {
     return (
         <>
             <div className="bg-navy py-24 h-full">
-                <div className="container mx-auto grid-2 p-4">
-                    <div className="flex lg:items-start items-center justify-center flex-col h-60vh font-serif">
-                        <p className="text-4xl text-azul text-left">
+                <div className="container mx-auto flex flex-wrap-reverse items-center px-4 py-6 h-60vh">
+                    <div className="flex lg:items-start items-start justify-center flex-col font-serif md:w-1/2">
+                        <p className="md:text-4xl text-2xl text-azul text-left">
                             Hi, I'm Max
                         </p>
-                        <div className="lg:(text-8xl text-left) text-7xl text-center leading-tight pb-8 pt-4">
+                        <div className="lg:(text-8xl text-left) text-5xl text-left leading-tight pb-8 pt-4">
                             <h1 className="text-off font-sans font-bold">
                                 Frontend Developer
                             </h1>
                             <h1 className="text-rosa">& Designer</h1>
                         </div>
                     </div>
-                    {/* <Animation /> */}
+                    <Animation />
                 </div>
             </div>
             <SlidesTechLove />

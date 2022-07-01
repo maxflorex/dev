@@ -1,27 +1,32 @@
-import { useQuery } from '@apollo/client';
-import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { FiYoutube } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import { PROJECTS } from '../../graphql/Queries';
 import SliderProjects from '../carousel/SliderProjects';
 
 type Props = {};
 
 const Projects = (props: Props) => {
-    const { data } = useQuery(PROJECTS);
-
-    const project: any = data?.projects?.data;
-
     return (
         <div className="container mx-auto pt-32">
-            <div className="flex-between">
-                <h1 className="lg:text-5xl text-4xl text-left px-8 text-navy font-serif">
+            <motion.div
+                className="flex justify-between mx-4 items-center"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{
+                    duration: 0.2,
+                    delay: 0.1,
+                }}
+            >
+                <h1 className="lg:text-5xl text-4xl text-left text-navy font-serif">
                     Some Projects I’ve Built
                 </h1>
-                <Link to="/projects" className="btn">
+                <Link
+                    to="/projects"
+                    className="bg-navy text-center leading-relaxed py-2 px-4 text-off py-auto hover:(bg-rosa) rounded-sm font-semibold"
+                >
                     See More Projects
                 </Link>
-            </div>
+            </motion.div>
             <SliderProjects />
         </div>
     );

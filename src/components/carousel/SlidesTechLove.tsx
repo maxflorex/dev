@@ -10,15 +10,14 @@ const SlidesTechLove = () => {
     const [show, setShow] = useState('');
 
     const { data } = useQuery(STACK);
-    
 
     return (
         <>
-            <div className="w-full rounded-md py-24 px-8 container mx-auto">
-                <h1 className="text-2xl font-serif mx-8">
+            <div className="w-full rounded-md py-24 container mx-auto">
+                <h1 className="text-2xl font-serif mx-4">
                     Technologies I love ❤️
                 </h1>
-                <Slider navigation={false} autoplay={true} interval={4000}>
+                <Slider navigation={false} autoplay={true} interval={6000}>
                     {data &&
                         data?.techStacks?.data.map((data: any, i: any) => {
                             let imageUrl =
@@ -27,12 +26,16 @@ const SlidesTechLove = () => {
                             return (
                                 <motion.div
                                     key={i}
-                                    className="flex h-32 md:h-48 overflow-hidden rounded-md w-full slidew px-2"
-                                    initial={{ opacity: 0, translateX: -50 }}
-                                    animate={{ opacity: 1, translateX: 0 }}
+                                    className="flex h-32 md:h-48 overflow-hidden rounded-md w-full slidew"
+                                    initial={{
+                                        opacity: 0,
+                                        translateY: -50,
+                                    }}
+                                    animate={{ translateY: 0, opacity: 1 }}
+                                    whileInView={{ translateX: 0 }}
                                     transition={{
-                                        duration: 0.5,
-                                        delay: i * 0.3,
+                                        duration: 0.2,
+                                        delay: i * 0.1,
                                     }}
                                 >
                                     <div

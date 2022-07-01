@@ -17,7 +17,7 @@ const Navbar = (props: Props) => {
 
     return (
         <>
-            <div className="flex-between bg-navy z-50">
+            <div className="flex justify-between bg-navy z-50 px-4 py-4">
                 <Link to="/">
                     <img
                         src={logo}
@@ -25,7 +25,7 @@ const Navbar = (props: Props) => {
                         className="w-8 h-8 h-full top-0 hover:(animate-spin animate-duration-500"
                     />
                 </Link>
-                <nav className="flex gap-8 children:(no-underline text-off font-light font-serif)">
+                <nav className="flex md:gap-8 gap-4 children:(no-underline text-off font-light font-serif)">
                     {/* <Link to="/">Home</Link> */}
                     <Link to="/about">About</Link>
                     <Link to="/projects">Projects</Link>

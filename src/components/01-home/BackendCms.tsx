@@ -1,4 +1,4 @@
-import React from 'react';
+import { motion } from 'framer-motion';
 import { BsPlus } from 'react-icons/bs';
 import {
     SiExpress,
@@ -15,12 +15,30 @@ type Props = {};
 
 const BackendCms = (props: Props) => {
     return (
-        <div className='mx-4 pb-36 mt-44'>
+        <motion.div
+            className="mx-4 mt-32 mb-0 md:(mb-40 mt-40)"
+            animate={{ y: 0 }}
+            initial={{ y: 200 }}
+            transition={{
+                duration: 0.25,
+            }}
+        >
             <div className="flex justify-center">
-                <h1 className='md:bg-navy px-16 md:px-4 py-2 rounded-sm text-sm md:text-lg md:text-off lg:-mb-20 mb-8 z-20 md:font-semibold tracking-wide text-navy text-center hidden md:block mt-8'>Sometimes a frontend developer has to wear the fullstack cape 🦸</h1>
+                <h1 className="md:bg-navy px-16 md:px-4 py-2 rounded-sm text-sm md:text-lg md:text-off lg:-mb-20 mb-8 z-20 md:font-semibold tracking-wide text-navy text-center hidden md:block mt-8">
+                    Sometimes a frontend developer has to wear the fullstack
+                    cape 🦸
+                </h1>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto gap-12 md:gap-16 md:mb-40 h-80">
-                <div className="bg-off/50 hover:bg-off flex-center rounded-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 container mx-auto gap-12 md:gap-16 h-80">
+                <motion.div
+                    className="bg-off/50 hover:bg-off flex-center rounded-sm"
+                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0}}
+                    transition={{
+                        duration: 0.1,
+                        delay: 0.2,
+                    }}
+                >
                     <p>What I use</p>
                     <h1 className="font-serif text-xl md:text-2xl">
                         When I take care of the backend
@@ -32,8 +50,16 @@ const BackendCms = (props: Props) => {
                         <SiMysql className="text-4xl" />
                         <BsPlus className="text-4xl" />
                     </div>
-                </div>
-                <div className="bg-off/50 hover:bg-off flex-center rounded-md">
+                </motion.div>
+                <motion.div
+                    className="bg-off/50 hover:bg-off flex-center rounded-md"
+                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0}}
+                    transition={{
+                        duration: 0.1,
+                        delay: 0.4,
+                    }}
+                >
                     <p>What I use</p>
                     <h1 className="font-serif text-xl md:text-2xl">
                         When a CMS is needed
@@ -45,9 +71,9 @@ const BackendCms = (props: Props) => {
                         <SiSquarespace className="text-4xl" />
                         <BsPlus className="text-4xl" />
                     </div>
-                </div>
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

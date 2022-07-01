@@ -8,27 +8,27 @@ type Props = {};
 
 const Developer = (props: Props) => {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 container mx-auto w-2/3 py-24">
+        <div className="grid grid-cols-1 lg:(grid-cols-2 w-2/3 px-0 pb-24 pt-24)container mx-auto w-full pb-8 pt-24 px-4">
             <div className="grid grid-cols-2 gap-4">
                 <img
                     src={pic1}
                     alt="collage"
-                    className="w-full h-full object-cover rounded-sm opacity-80 hover:(opacity-100)"
+                    className="w-full md:h-full h-auto object-cover rounded-sm opacity-80 hover:(opacity-100)"
                 />
                 <img
                     src={pic2}
                     alt="collage"
-                    className="w-full h-full object-cover rounded-sm opacity-80 hover:(opacity-100)"
+                    className="w-full md:h-full h-auto object-cover rounded-sm opacity-80 hover:(opacity-100)"
                 />
                 <img
                     src={pic3}
                     alt="collage"
-                    className="w-full h-full object-cover rounded-sm opacity-80 hover:(opacity-100)"
+                    className="w-full md:h-full h-auto object-cover rounded-sm opacity-80 hover:(opacity-100)"
                 />
                 <img
                     src={pic4}
                     alt="collage"
-                    className="w-full h-full object-cover rounded-sm opacity-80 hover:(opacity-100)"
+                    className="w-full md:h-full h-auto object-cover rounded-sm opacity-80 hover:(opacity-100)"
                 />
             </div>
             <div className="flex flex-col items-end py-16 px-0 w-full lg:(px-16 -ml-40 -mb-40 mr-40 mt-40) gap-16  z-20">

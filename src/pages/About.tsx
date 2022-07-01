@@ -12,12 +12,12 @@ type Props = {};
 const About = (props: Props) => {
     return (
         <motion.div
-            initial={{ y: '-100%' }}
-            animate={{ y: 0 }}
-            transition={{
-                x: { type: 'spring', stiffness: 100 },
-                default: { duration: 0.2 },
-            }}
+            // initial={{ y: '-100%' }}
+            // animate={{ y: 0 }}
+            // transition={{
+            //     x: { type: 'spring', stiffness: 100 },
+            //     default: { duration: 0.2 },
+            // }}
             className="w-full"
         >
             <Header />
