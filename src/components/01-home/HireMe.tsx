@@ -27,7 +27,7 @@ const HireMe = (props: Props) => {
                 className="text-justify hidden md:block"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 1 }}
+                transition={{ duration: 0.4, delay: 0.7}}
             >
                 Have an exciting project where you need help?{' '}
                 <span onClick={handleClick} className="cursor-pointer hover:text-azul underline underline-offset-8 underline-off">

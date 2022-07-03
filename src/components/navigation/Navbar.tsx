@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { BsGithub } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/LOGO-03.svg';
 import ContactModal from '../modals/ContactModal';
@@ -13,11 +14,11 @@ const Navbar = (props: Props) => {
         // SHOW SCROLLBAR
         document.body.style.overflow = 'hidden';
         document.body.style.height = 'auto';
-    };
+    }; 
 
     return (
         <>
-            <div className="flex justify-between bg-navy z-50 px-4 py-4">
+            <div className="flex justify-between items-center bg-navy z-50 px-4 py-4">
                 <Link to="/">
                     <img
                         src={logo}
@@ -32,6 +33,9 @@ const Navbar = (props: Props) => {
                     <span className="cursor-pointer" onClick={handleClick}>
                         Contact
                     </span>
+                    <a href="https://github.com/maxflorex/dev">
+                        <BsGithub />
+                    </a>
                 </nav>
             </div>
             {showContact && <ContactModal setShowContact={setShowContact} />}

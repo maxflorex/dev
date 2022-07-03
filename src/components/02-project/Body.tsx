@@ -8,7 +8,7 @@ const Body = ({ pro }: Project) => {
     const [selectedImage, setSelectedImage] = useState('');
 
     const handleClick = (data: any) => {
-        setSelectedImage(`http://localhost:1337${data?.attributes?.url}`);
+        setSelectedImage(data?.attributes?.url);
         setShowImage(true);
         // SHOW SCROLLBAR
         document.body.style.overflow = 'hidden';
@@ -20,7 +20,7 @@ const Body = ({ pro }: Project) => {
                 <div className="flex flex-col gap-16">
                     {pro.Banner && (
                         <img
-                            src={`http://localhost:1337${pro.Banner.data[0].attributes.url}`}
+                            src={pro.Banner.data[0].attributes.url}
                             alt="Banner"
                             className=""
                         />
@@ -34,7 +34,7 @@ const Body = ({ pro }: Project) => {
                                 return (
                                     <img
                                         key={i}
-                                        src={`http://localhost:1337${data.attributes.url}`}
+                                        src={data.attributes.url}
                                         alt="Banner"
                                         className="w-full object-cover h-full self-start border-solid-4 border-off/40 rounded-sm hover:scale-105 cursor-pointer"
                                         onClick={() => handleClick(data)}
@@ -51,7 +51,7 @@ const Body = ({ pro }: Project) => {
                                 return (
                                     <img
                                         key={i}
-                                        src={`http://localhost:1337${data.attributes.url}`}
+                                        src={data.attributes.url}
                                         alt="Banner"
                                         className="w-full object-cover h-full self-start border-solid-4 border-off/40 rounded-sm hover:scale-105 cursor-pointer"
                                         onClick={() => handleClick(data)}

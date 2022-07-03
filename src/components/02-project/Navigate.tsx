@@ -1,17 +1,17 @@
-import { useQuery } from '@apollo/client';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { PROJECTS } from '../../graphql/Queries';
-import { IoIosArrowRoundForward } from 'react-icons/io';
+import { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AppContext } from '../../utils/context/AppContext';
 
 type Props = {
-    proId: number;
+    proId: any;
 };
 
 const Navigate = ({ proId }: Props) => {
     const [indexed, setIndexed] = useState([]);
     const [random, setRandom] = useState([]);
-    const { data } = useQuery(PROJECTS);
+    const { projects } = useContext(AppContext);
+
+    const navi = useNavigate();
 
     // FISHER-YATES ALGORITHM - SHUFFLE FUNCTION
     const shuffled = (arr: any) => {
@@ -25,42 +25,44 @@ const Navigate = ({ proId }: Props) => {
     };
 
     // DELETE CURRENT PROJECT & FILTER A NEW ARRAY
-    useMemo(() => {
-        if (data) {
-            let index = data.projects.data.filter((x: any) => {
+    useEffect(() => {
+        if (projects) {
+            let index = projects.filter((x: any) => {
                 let result = x.id !== proId;
                 return result;
             });
             index.length > 1 && setIndexed(index);
         }
-    }, [data?.projects?.data, proId]);
+    }, [projects, proId]);
 
     useEffect(() => {
         indexed && setRandom(shuffled(indexed));
     }, [indexed]);
 
+    console.log(indexed);
+    
+
     return (
-        <div className="container mx-auto  md:w-1/2 rounded-sm mt-32 md:mb-0 mb-0">
+        <div className="container mx-auto md:(w-1/2 mb-24) rounded-sm mt-32 mb-0">
             <div className="grid grid-cols-1 md:grid-cols-2 py-24 gap-12 text-navy px-8 bg-off">
-                {random &&
-                    random?.slice(0, 2).map((data: any, i: number) => {
-                        return (
-                            <div
-                                key={i}
-                                className="flex flex-col items-start oddy"
+                {random?.slice(0, 2).map((data: any, i: number) => {
+                    return (
+                        <div
+                            key={i}
+                            className="flex flex-col md:(items-start) items-end oddy"
+                        >
+                            <h3 className="text-xs font-serif">Project</h3>
+                            <Link
+                                to={`/projects/${data.id}`}
+                                className="font-serif text-3xl "
                             >
-                                <h3 className="text-xs font-serif">Project</h3>
-                                <Link
-                                    to={`/projects/${data.id}`}
-                                    className="font-serif text-3xl "
-                                >
-                                    {data.attributes.Title}
-                                </Link>
-                            </div>
-                        );
-                    })}
+                                {data.attributes.Title}
+                            </Link>
+                        </div>
+                    );
+                })}
             </div>
-            <div className="py-24 flex-center">
+            {/* <div className="py-24 flex-center">
                 <Link
                     to="/coming-soon"
                     className=" mx-auto text-4xl leading-none py-auto flex flex-col gap-2 group"
@@ -73,7 +75,7 @@ const Navigate = ({ proId }: Props) => {
                         <IoIosArrowRoundForward className="text-xl" />
                     </div>
                 </Link>
-            </div>
+            </div> */}
         </div>
     );
 };

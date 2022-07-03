@@ -4,6 +4,7 @@ import App from './App'
 import './index.css'
 import 'virtual:windi.css'
 import 'virtual:windi-devtools'
+import 'dotenv'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

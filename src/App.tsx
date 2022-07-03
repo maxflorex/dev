@@ -9,21 +9,33 @@ import About from './pages/About';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
-import SingleProject from './utils/SingleProject';
 import { AppContext } from './utils/context/AppContext';
 import ProjectSingle from './pages/ProjectSingle';
 import ScrollToTop from './components/ScrollToTop';
 import ComingSoon from './components/ComingSoon';
 
 function App() {
-    const [photos, setPhotos] = useState('');
+    const [projects, setProjects] = useState([]);
+    const [stack, setStack] = useState([]);
 
     useEffect(() => {
         axios
-            .get(`https://jsonplaceholder.typicode.com/photos`)
+            .get(import.meta.env.VITE_PROJECTS)
             .then((res) => {
                 const data = res.data;
-                setPhotos(data);
+                setProjects(data.data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
+    useEffect(() => {
+        axios
+            .get(import.meta.env.VITE_STACK)
+            .then((res) => {
+                const data = res.data;
+                setStack(data.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -37,7 +49,7 @@ function App() {
     });
 
     return (
-        <AppContext.Provider value={{ photos }}>
+        <AppContext.Provider value={{ projects, stack }}>
             <Router>
                 <ApolloProvider client={client}>
                     <ScrollToTop>

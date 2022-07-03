@@ -1,32 +1,34 @@
-import { useQuery } from '@apollo/client';
-import { PROJECTS } from '../../graphql/Queries';
 import Slider from './Slider';
 import { BsGithub, BsGlobe } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useContext } from 'react';
+import { AppContext } from '../../utils/context/AppContext';
 
 const SliderProjects = () => {
-    const { data } = useQuery(PROJECTS);
-    const project: any = data?.projects?.data;
+    const { projects } = useContext(AppContext);
 
     return (
         <div className="w-full rounded-md py-16 px-4 container mx-auto">
             <Slider navigation={true} autoplay={false} speed={300}>
-                {data &&
-                    project?.map((data: any, i: number) => {
+                {projects?.length > 0 &&
+                    projects.map((data: any, i: number) => {
                         const banner =
                             data.attributes.Banner.data[0].attributes.url;
                         const stack = data.attributes.tech_stacks.data;
+
+                        console.log(data);
+                        
 
                         return (
                             <motion.div
                                 key={i}
                                 className="slidesingle flex flex-col md:flex-row gap-4 items-center box-border"
-                                initial={{ opacity: 0}}
+                                initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{
-                                    duration: 0.5,
-                                    delay: 0.4
+                                    duration: 0.3,
+                                    delay: 0.4,
                                 }}
                             >
                                 <Link
@@ -34,7 +36,7 @@ const SliderProjects = () => {
                                     className="border border-off/20 outline-8 my-0 rounded-sm overflow-hidden w-full relative"
                                 >
                                     <img
-                                        src={`http://localhost:1337${banner}`}
+                                        src={banner}
                                         alt="Logo Tech"
                                         className="object-contain w-full shadow opacity-50 hover:opacity-80 rounded-sm"
                                         // style={{filter: 'grayscale(100%)'}}

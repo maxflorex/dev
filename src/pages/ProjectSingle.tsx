@@ -1,4 +1,5 @@
 import { gql, useQuery } from '@apollo/client';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Body from '../components/02-project/Body';
@@ -12,68 +13,17 @@ const ProjectSingle = (props: Props) => {
     const { id } = useParams();
     const [pro, setPro] = useState([]);
 
-    const { data } = useQuery(
-        gql`
-            query project($id: ID!) {
-                project(id: $id) {
-                    data {
-                        attributes {
-                            Title
-                            Website
-                            Github
-                            Summary
-                            Complexity
-                            Features
-                            tech_stacks {
-                                data {
-                                    attributes {
-                                        Title
-                                    }
-                                }
-                            }
-                            Banner {
-                                data {
-                                    attributes {
-                                        url
-                                    }
-                                }
-                            }
-                            Photos {
-                                data {
-                                    attributes {
-                                        url
-                                    }
-                                }
-                            }
-                            Responsive {
-                                data {
-                                    attributes {
-                                        url
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        `,
-        {
-            variables: { id },
-        }
-    );
-
     useEffect(() => {
-        if (data?.project) {
-            const {
-                project: {
-                    data: { attributes },
-                },
-            } = data;
-            setPro(attributes);
-        }
-    }, [data]);
-
-    
+        axios
+            .get(import.meta.env.VITE_PROJECT + '/' + id + '?populate=*')
+            .then((res) => {
+                const data = res.data;
+                setPro(data.data.attributes);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
 
     return (
         <div>
@@ -90,7 +40,7 @@ const ProjectSingle = (props: Props) => {
                 <Sidebar pro={pro} />
                 <Body pro={pro} />
             </div>
-            <Navigate proId={id}/>
+            <Navigate proId={id} />
         </div>
     );
 };

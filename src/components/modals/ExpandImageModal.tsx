@@ -7,6 +7,8 @@ type Props = {
     show: any;
 };
 
+
+
 const ExpandImageModal = ({ url, show }: Props) => {
     const handleShow = (e: any) => {
         if (e.target.classList.contains('dismiss')) {

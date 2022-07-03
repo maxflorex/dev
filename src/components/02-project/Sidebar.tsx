@@ -4,6 +4,7 @@ import { BsGithub, BsGlobe } from 'react-icons/bs';
 type Project = { pro: any };
 
 const Sidebar = ({ pro }: Project) => {
+    
     return (
         <div className="flex flex-col h-full gap-2 p-8 col-span-3 md:(col-span-1 p-8)">
             <div className="hidden md:block flex flex-col gap-2">

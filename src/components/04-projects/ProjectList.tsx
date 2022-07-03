@@ -1,18 +1,17 @@
-import { useQuery } from '@apollo/client';
-import { PROJECTS } from '../../graphql/Queries';
 import { BsGithub, BsGlobe } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AppContext } from '../../utils/context/AppContext';
 
 type Props = {};
 
 const ProjectList = (props: Props) => {
-    const { data } = useQuery(PROJECTS);
-    const project: any = data?.projects?.data;
+    const { projects } = useContext(AppContext);
 
     return (
         <div className="w-full rounded-md py-16 md:px-8 px-4 container mx-auto flex flex-col gap-24 mb-24">
-            {data &&
-                project?.map((data: any, i: number) => {
+            {projects?.length > 1 &&
+                projects.map((data: any, i: number) => {
                     const banner =
                         data.attributes.Banner.data[0].attributes.url;
                     const stack = data.attributes.tech_stacks.data;
@@ -24,7 +23,7 @@ const ProjectList = (props: Props) => {
                         >
                             <section className="border border-off/20 outline-8 my-0 rounded-sm overflow-hidden w-full relative">
                                 <img
-                                    src={`http://localhost:1337${banner}`}
+                                    src={banner}
                                     alt="Logo Tech"
                                     className="object-contain w-full shadow opacity-50 hover:opacity-80 rounded-sm"
                                     // style={{filter: 'grayscale(100%)'}}

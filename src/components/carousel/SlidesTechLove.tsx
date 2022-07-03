@@ -1,15 +1,12 @@
-import { gql, useQuery } from '@apollo/client';
 import { AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
-import { STACK } from '../../graphql/Queries';
+import { useContext, useState } from 'react';
 import Slider from './Slider';
 import { motion } from 'framer-motion';
-import { item, variants } from '../../utils/animations/animate';
+import { AppContext } from '../../utils/context/AppContext';
 
 const SlidesTechLove = () => {
     const [show, setShow] = useState('');
-
-    const { data } = useQuery(STACK);
+    const { stack } = useContext(AppContext);
 
     return (
         <>
@@ -18,8 +15,8 @@ const SlidesTechLove = () => {
                     Technologies I love ❤️
                 </h1>
                 <Slider navigation={false} autoplay={true} interval={6000}>
-                    {data &&
-                        data?.techStacks?.data.map((data: any, i: any) => {
+                    {stack?.length > 0 &&
+                        stack.map((data: any, i: any) => {
                             let imageUrl =
                                 data.attributes.Image.data.attributes.url;
 
@@ -45,7 +42,7 @@ const SlidesTechLove = () => {
                                     >
                                         <div className="relative w-full">
                                             <img
-                                                src={`http://localhost:1337${imageUrl}`}
+                                                src={imageUrl}
                                                 alt="Logo Tech"
                                                 className="w-16 h-16 object-contain mx-auto"
                                             />
