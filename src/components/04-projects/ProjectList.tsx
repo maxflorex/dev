@@ -1,7 +1,7 @@
 import { BsGithub, BsGlobe } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AppContext } from '../../utils/context/AppContext';
+import { Link } from 'react-router-dom';
 
 type Props = {};
 
@@ -44,10 +44,18 @@ const ProjectList = (props: Props) => {
                                         {data.attributes.Title}
                                     </Link>
                                     <div className="flex gap-8 md:pr-8 text-azul">
-                                        <a href={data.attributes.Github}>
+                                        <a
+                                            href={data.attributes.Github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <BsGithub />
                                         </a>
-                                        <a href={data.attributes.Website}>
+                                        <a
+                                            href={data.attributes.Website}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <BsGlobe />
                                         </a>
                                     </div>

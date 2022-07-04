@@ -17,14 +17,14 @@ const Projects = (props: Props) => {
                     delay: 0.1,
                 }}
             >
-                <h1 className="lg:text-5xl text-4xl text-left text-navy font-serif">
+                <h1 className="lg:text-5xl md:text-4xl text-2xl text-left text-navy font-serif">
                     Some Projects I’ve Built
                 </h1>
                 <Link
                     to="/projects"
                     className="bg-navy text-center leading-relaxed py-2 px-4 text-off py-auto hover:(bg-rosa) rounded-sm font-semibold"
                 >
-                    See More Projects
+                    See More
                 </Link>
             </motion.div>
             <SliderProjects />

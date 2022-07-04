@@ -28,11 +28,11 @@ const ContactModal = ({ setShowContact }: Props) => {
                     duration: 0.3,
                 },
             }}
-            className="fixed bg-white dismiss flex-center top-0 left-0 overflow-hidden dismiss z-50 backdrop-blur-2xl"
+            className="fixed bg-white/40 blurry dismiss flex-center top-0 left-0 overflow-hidden dismiss z-50 backdrop-blur-2xl"
             onClick={handleClick}
         >
             <AiOutlineClose className='fixed top-8 right-8 text-2xl dismiss cursor-pointer hover:animate-spin' onClick={handleClick}/>
-            <form className="w-full max-w-lg">
+            <form className="w-full max-w-lg bg-white p-16 shadow">
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label className="block font-serif tracking-wide text-navy text-xs mb-2 text-xl">
@@ -40,7 +40,7 @@ const ContactModal = ({ setShowContact }: Props) => {
                         </label>
 
                         <input
-                            className="text-xs appearance-none block w-full bg-off text-navy border border-off rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-azul"
+                            className="text-xs appearance-none block w-full bg-off/40 text-navy border border-none rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-off"
                             id="grid-last-name"
                             type="text"
                             placeholder="John"
@@ -51,7 +51,7 @@ const ContactModal = ({ setShowContact }: Props) => {
                             Last Name
                         </label>
                         <input
-                            className="text-xs appearance-none block w-full bg-off text-navy border border-off rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-azul"
+                            className="text-xs appearance-none block w-full bg-off/40 text-navy border border-none rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-off"
                             id="grid-last-name"
                             type="text"
                             placeholder="Doe"
@@ -64,7 +64,7 @@ const ContactModal = ({ setShowContact }: Props) => {
                             E-mail
                         </label>
                         <input
-                            className="text-xs appearance-none block w-full bg-off text-navy border border-off rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-azul"
+                            className="text-xs appearance-none block w-full bg-off/40 text-navy border border-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-off"
                             id="email"
                             type="email"
                             placeholder="you@email.com"
@@ -77,7 +77,7 @@ const ContactModal = ({ setShowContact }: Props) => {
                             Message
                         </label>
                         <textarea
-                            className=" no-resize text-xs appearance-none block w-full bg-off text-navy border border-off rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-azul h-48 resize-none"
+                            className=" no-resize text-xs appearance-none block w-full bg-off/40 text-navy border border-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-off h-48 resize-none"
                             id="message"
                             placeholder="Place your message here..."
                         ></textarea>

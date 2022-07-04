@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../utils/context/AppContext';
 
 type Props = {
@@ -39,8 +39,9 @@ const Navigate = ({ proId }: Props) => {
         indexed && setRandom(shuffled(indexed));
     }, [indexed]);
 
-    console.log(indexed);
-    
+    const handleNavigate = (data: string) => {
+        navi(`/projects/${data}`);
+    };
 
     return (
         <div className="container mx-auto md:(w-1/2 mb-24) rounded-sm mt-32 mb-0">
@@ -52,12 +53,12 @@ const Navigate = ({ proId }: Props) => {
                             className="flex flex-col md:(items-start) items-end oddy"
                         >
                             <h3 className="text-xs font-serif">Project</h3>
-                            <Link
-                                to={`/projects/${data.id}`}
+                            <a
+                                href={`/projects/${data.id}`}
                                 className="font-serif text-3xl "
                             >
                                 {data.attributes.Title}
-                            </Link>
+                            </a>
                         </div>
                     );
                 })}

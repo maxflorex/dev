@@ -17,19 +17,10 @@ const SliderProjects = () => {
                             data.attributes.Banner.data[0].attributes.url;
                         const stack = data.attributes.tech_stacks.data;
 
-                        console.log(data);
-                        
-
                         return (
-                            <motion.div
+                            <div
                                 key={i}
                                 className="slidesingle flex flex-col md:flex-row gap-4 items-center box-border"
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                transition={{
-                                    duration: 0.3,
-                                    delay: 0.4,
-                                }}
                             >
                                 <Link
                                     to={`/projects/${data.id}`}
@@ -48,7 +39,7 @@ const SliderProjects = () => {
                                         View Full Project
                                     </Link>
                                 </Link>
-                                <motion.section className="flex flex-col gap-4 py-4 w-full">
+                                <section className="flex flex-col gap-4 py-4 w-full">
                                     <div className="flex justify-between items-center mb-4 mx-0 md:mb-0">
                                         <Link
                                             to={`/projects/${data.id}`}
@@ -82,8 +73,8 @@ const SliderProjects = () => {
                                             )}
                                         </ul>
                                     </div>
-                                </motion.section>
-                            </motion.div>
+                                </section>
+                            </div>
                         );
                     })}
             </Slider>

@@ -1,4 +1,3 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import axios from 'axios';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -42,42 +41,31 @@ function App() {
             });
     }, []);
 
-    // APOLLO CLIENT
-    const client = new ApolloClient({
-        uri: 'http://localhost:1337/graphql',
-        cache: new InMemoryCache(),
-    });
-
     return (
-        <AppContext.Provider value={{ projects, stack }}>
-            <Router>
-                <ApolloProvider client={client}>
-                    <ScrollToTop>
-                        <Navbar />
-                        <AnimatePresence>
-                            <Routes>
-                                <Route path={'/'} element={<Home />} />
-                                <Route path={'/about'} element={<About />} />
-                                <Route
-                                    path={'/projects'}
-                                    element={<Projects />}
-                                />
-                                <Route
-                                    path={'/projects/:id'}
-                                    element={<ProjectSingle />}
-                                />
-                                <Route path={'/resume'} element={<Resume />} />
-                                <Route
-                                    path={'/coming-soon'}
-                                    element={<ComingSoon />}
-                                />
-                            </Routes>
-                        </AnimatePresence>
-                        <Footer />
-                    </ScrollToTop>
-                </ApolloProvider>
-            </Router>
-        </AppContext.Provider>
+        <Router>
+            <AppContext.Provider value={{ projects, stack }}>
+                <ScrollToTop>
+                    <Navbar />
+                    <AnimatePresence>
+                        <Routes>
+                            <Route path={'/'} element={<Home />} />
+                            <Route path={'/about'} element={<About />} />
+                            <Route path={'/projects'} element={<Projects />} />
+                            <Route
+                                path={'/projects/:id'}
+                                element={<ProjectSingle />}
+                            />
+                            <Route path={'/resume'} element={<Resume />} />
+                            <Route
+                                path={'/coming-soon'}
+                                element={<ComingSoon />}
+                            />
+                        </Routes>
+                    </AnimatePresence>
+                    <Footer />
+                </ScrollToTop>
+            </AppContext.Provider>
+        </Router>
     );
 }
 

@@ -32,7 +32,7 @@ const Developer = (props: Props) => {
                 />
             </div>
             <div className="flex flex-col items-end py-16 px-0 w-full lg:(px-16 -ml-40 -mb-40 mr-40 mt-40) gap-16  z-20">
-                <h1 className="font-serif text-4xl self-end">
+                <h1 className="font-serif text-4xl lg:self-end self-start">
                     A Graphic Artist
                 </h1>
                 <p className="text-justify leading-loose lg:(bg-off/90 backdrop-blur-lg p-8 -m-8) ">
