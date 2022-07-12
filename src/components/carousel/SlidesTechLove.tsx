@@ -11,8 +11,8 @@ const SlidesTechLove = () => {
     return (
         <>
             <div className="w-full rounded-md py-24 container mx-auto">
-                <h1 className="text-2xl font-serif mx-4">
-                    Technologies I love ❤️
+                <h1 className="md:text-2xl text-lg text-left text-navy md:mb-4 mb-8 px-4 italic font-serif">
+                &lt; Technologies I love ❤️ / &gt;
                 </h1>
                 <Slider navigation={false} autoplay={true} interval={6000}>
                     {stack?.length > 0 &&

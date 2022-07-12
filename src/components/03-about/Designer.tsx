@@ -1,4 +1,5 @@
 import pic from '../../assets/BlackPortrait.webp';
+import logo from '../../assets/dev-14-05.svg';
 
 type Props = {};
 
@@ -21,18 +22,21 @@ const Designer = (props: Props) => {
                     a variety of purposes ever since.
                 </p>
             </div>
-            <img
-                src={pic}
-                alt=""
-                className="w-full h-full object-cover rounded-sm opacity-80 hover:(opacity-100)"
-            />
+            <div className="relative">
+                <img
+                    src={pic}
+                    alt=""
+                    className="w-full h-full object-cover rounded-sm opacity-80 hover:(opacity-100)"
+                />
+                <img src={logo} alt="logo" className='absolute bottom-4 right-4 w-32 hidden md:block' />
+            </div>
             <div></div>
             <div className="py-4 flex flex-col gap-4 items-end lg:w-2/3 ml-auto justify-end">
                 <h3 className="font-serif italic">
                     Some of my favorite apps for development:
                 </h3>
                 <ul className="flex flex-wrap gap-4 children:(bg-off py-1 px-2 rounded-sm) items-end ">
-                       <li>Typescript</li>
+                    <li>Typescript</li>
                     <li>React</li>
                     <li>Redux</li>
                     <li>MongoDb</li>

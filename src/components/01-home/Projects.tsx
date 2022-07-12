@@ -7,30 +7,18 @@ type Props = {};
 
 const Projects = (props: Props) => {
     return (
-        <div className="container mx-auto pt-32">
-            <motion.div
-                className="flex justify-between mx-4 items-center"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{
-                    duration: 0.2,
-                    delay: 0.1,
-                }}
-            >
-                <h1 className="lg:text-5xl md:text-4xl text-2xl text-left text-navy font-serif">
-                    Some Projects I’ve Built
+        <div className="container mx-auto md:pt-32">
+            <div className="flex flex-wrap gap-4 justify-between mx-4 items-center">
+                <h1 className="md:text-2xl text-lg italic text-xl text-left text-navy font-light font-serif">
+                    &lt; Some Projects I’ve Built / &gt;
                 </h1>
-                <Link
-                    to="/projects"
-                    className="bg-navy text-center leading-relaxed py-2 px-4 text-off py-auto hover:(bg-rosa) rounded-sm font-semibold"
-                >
-                    See More
+                <Link to="/projects" className="btn3">
+                    Explore All Projects
                 </Link>
-            </motion.div>
+            </div>
             <SliderProjects />
         </div>
     );
 };
 
 export default Projects;
-FiYoutube;

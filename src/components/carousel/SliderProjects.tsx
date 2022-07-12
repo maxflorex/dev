@@ -34,20 +34,20 @@ const SliderProjects = () => {
                                     />
                                     <Link
                                         to={`/projects/${data.id}`}
-                                        className="btn2 absolute md:(top-4 left-4 bottom-auto right-auto) bottom-4 right-4"
+                                        className="btn absolute md:(top-4 left-4 bottom-auto right-auto) bottom-4 right-4"
                                     >
-                                        View Full Project
+                                        Know More
                                     </Link>
                                 </Link>
                                 <section className="flex flex-col gap-4 py-4 w-full">
                                     <div className="flex justify-between items-center mb-4 mx-0 md:mb-0">
                                         <Link
                                             to={`/projects/${data.id}`}
-                                            className="text-4xl font-serif text-center md:(text-left pl-8)"
+                                            className="md:text-6xl text-4xl font-serif text-center md:(text-left pl-8 mb-8)"
                                         >
                                             {data.attributes.Title}
                                         </Link>
-                                        <div className="flex gap-8 md:pr-8 text-rosa">
+                                        <div className="flex gap-8 md:pr-8 text-navy">
                                             <a href={data.attributes.Github}>
                                                 <BsGithub />
                                             </a>
@@ -56,7 +56,7 @@ const SliderProjects = () => {
                                             </a>
                                         </div>
                                     </div>
-                                    <p className="leading-loose text-justify bg-navy px-8 py-12 md:(-ml-40 py-16  mr-0 px-16) z-10 rounded-sm text-off">
+                                    <p className="leading-loose text-justify bg-azul px-8 py-12 md:(-ml-40 py-16  mr-0 px-16) z-10 rounded-sm text-white tracking-wide">
                                         {data.attributes.Summary}
                                     </p>
                                     <div className="flex gap-4 justify-between flex-wrap-reverse mt-8 pl-8">

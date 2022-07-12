@@ -7,14 +7,7 @@
 #root {
     min-height: 100vh;
     overflow: auto;
-}
-
-.textgradient {
-    background: #F6EBE4;
-    background: linear-gradient(to right, #F6EBE4 0%, #23BBD5 49%, #F37264 81%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+    
 }
 
 body::-webkit-scrollbar,
@@ -30,8 +23,7 @@ body::-webkit-scrollbar-track,
 
 body::-webkit-scrollbar-thumb,
 .scroll::-webkit-scrollbar-thumb {
-    background-color: #00000040;
-    border-radius: 9999px;
+    background-color: #23bbd5;
 }
 
 .oddy:nth-child(odd) {
@@ -45,3 +37,34 @@ body::-webkit-scrollbar-thumb,
     backdrop-filter: blur(8px);
 }
 
+.bg {
+    background-color:hsla(183,0%,100%,1);
+    background-image:
+    radial-gradient(at 16% 0%, hsla(11,79%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 1% 57%, hsla(188,71%,48%,1) 0px, transparent 50%),
+    radial-gradient(at 97% 4%, hsla(188,71%,48%,1) 0px, transparent 50%);
+}
+
+.texture {
+    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+    mix-blend-mode: multiply;
+}
+
+.text-grad {
+    background: #E49A35;
+    background: linear-gradient(to right, #E49A35 0%, #F37264 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.grad {
+    background-color:hsla(188,71%,48%,1);
+    background-image:
+    radial-gradient(at 50% 100%, hsla(121,0%,100%,1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(125,0%,100%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(288,0%,100%,1) 0px, transparent 50%);
+}
+
+.shade {
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.03);
+}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Animation = () => {
     return (
-        <div className="md:(w-1/2 block) h-full flex hidden">
+        <div className="flex absolute w-full h-full">
             <motion.div
                 className="w-full h-full"
                 initial={{ opacity: 0 }}
@@ -11,8 +11,10 @@ const Animation = () => {
                 transition={{ delay: 1, duration: 1 }}
             >
                 <Spline
-                    scene="https://prod.spline.design/OF5o0oiDijGXsDow/scene.splinecode"
-                    className="md:(h-full w-full) h-auto w-screen -mb-60"
+                    // scene="https://prod.spline.design/rbStmfxYKiJuNywQ/scene.splinecode"
+                    // scene="https://prod.spline.design/rbStmfxYKiJuNywQ/scene.splinecode"
+                    scene="https://prod.spline.design/rbStmfxYKiJuNywQ/scene.splinecode"
+                    // className="md:(h-full w-full) h-auto w-screen -mb-60"
                 />
             </motion.div>
         </div>

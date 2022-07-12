@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import pic from '../../assets/3.png';
 
@@ -6,7 +5,7 @@ type Props = {};
 
 const AboutMe = (props: Props) => {
     return (
-        <div className="container mx-auto px-8 bg-azul md:mb-40 rounded-sm">
+        <div className="container mx-auto px-8 bg-azul md:mb-40 rounded-sm relative">
             <div className="flex flex-col py-16">
                 <img
                     src={pic}
@@ -24,7 +23,8 @@ const AboutMe = (props: Props) => {
                         started putting websites together and working as
                         freelance web designer in online platforms like ELance
                         (Now known as Upwork), Guru, Fiverr, among others. Web
-                        development / coding / programming has become a lifestyle for me...
+                        development / coding / programming has become a
+                        lifestyle for me...
                     </p>
                     <Link
                         to="/about"

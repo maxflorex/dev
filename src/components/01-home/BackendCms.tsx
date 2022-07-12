@@ -15,9 +15,9 @@ type Props = {};
 
 const BackendCms = (props: Props) => {
     return (
-        <div className="mx-4 mt-32 mb-0 md:(mb-40 mt-40)">
+        <div className="mx-4 mt-32 mb-0 md:(mb-40 mt-40) hidden md:block">
             <div className="flex justify-center">
-                <h1 className="md:bg-navy px-16 md:px-4 py-2 rounded-sm text-sm md:text-lg md:text-off lg:-mb-20 mb-8 z-20 md:font-semibold tracking-wide text-navy text-center hidden md:block mt-8">
+                <h1 className="md:bg-navy px-16 md:px-4 py-2 rounded-sm text-sm md:text-lg md:text-off lg:-mb-20 mb-8 z-20 md:font-light tracking-wide text-navy text-center hidden md:block mt-8 font-serif">
                     Sometimes a frontend developer has to wear the fullstack
                     cape 🦸
                 </h1>
