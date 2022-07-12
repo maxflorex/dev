@@ -9,8 +9,8 @@ const Home = () => {
     return (
         <>
             <div className="bg py-24 h-full blurry">
-                <div className="container mx-auto flex flex-wrap-reverse items-center px-4 py-6 h-60vh">
-                    <div className="flex lg:items-start items-start justify-center flex-col font-serif md:w-1/2">
+                <div className="container mx-auto flex flex-wrap-reverse items-center px-4 py-6 md:h-60vh h-50vh">
+                    <div className="flex lg:items-start items-start justify-center flex-col font-serif md:w-1/2 mt-16 md:mt-0">
                         <p className="md:text-4xl text-2xl text-white text-left shade ">
                             Hi, I'm Max
                         </p>

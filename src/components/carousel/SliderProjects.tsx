@@ -59,7 +59,7 @@ const SliderProjects = () => {
                                     <p className="leading-loose text-justify bg-azul px-8 py-12 md:(-ml-40 py-16  mr-0 px-16) z-10 rounded-sm text-white tracking-wide">
                                         {data.attributes.Summary}
                                     </p>
-                                    <div className="flex gap-4 justify-between flex-wrap-reverse mt-8 pl-8">
+                                    <div className="flex gap-4 justify-between flex-wrap-reverse md:mt-8 mt-4 md:pl-8">
                                         <ul className="flex gap-4 flex-wrap">
                                             {stack.map(
                                                 (data: any, i: number) => (

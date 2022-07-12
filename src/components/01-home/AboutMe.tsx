@@ -26,11 +26,12 @@ const AboutMe = (props: Props) => {
                         development / coding / programming has become a
                         lifestyle for me...
                     </p>
+
                     <Link
                         to="/about"
-                        className="btn mt-8 md:ml-auto hover:bg-rosa"
+                        className="flex pt-4 justify-center"
                     >
-                        My Journey
+                        <span className='btn mt-8 md:ml-auto hover:bg-ros'>My Journey</span>
                     </Link>
                 </div>
             </div>

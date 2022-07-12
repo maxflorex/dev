@@ -14,9 +14,9 @@ const HireMe = (props: Props) => {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center my-48 md:(pt-0 my-56) gap-8 md:gap-4 container mx-auto px-4">
+        <div className="flex flex-col justify-center items-center mt-32 mb-48 md:(pt-0 my-56) gap-8 md:gap-4 container mx-auto px-4">
             <motion.h1
-                className="font-serif text-3xl md:text-4xl text-center"
+                className="font-serif text-3xl md:text-4xl text-center w-2/3 leading-relaxed"
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4 }}
