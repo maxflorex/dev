@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose } from 'react-icons/ai';
+import mail3d from '../../assets/email-notification-4036270-3342587.png';
 
 type Props = {
     setShowContact: any;
@@ -18,10 +19,10 @@ const ContactModal = ({ setShowContact }: Props) => {
     return (
         <motion.div
             key="modal"
-            initial={false}
+            initial={{ opacity: 0, scale: 1.4 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{
-                x: '200vw',
+                x: 200,
                 transition: {
                     type: 'spring',
                     stiffness: 100,
@@ -31,8 +32,11 @@ const ContactModal = ({ setShowContact }: Props) => {
             className="fixed bg-white/40 blurry dismiss flex-center top-0 left-0 overflow-hidden dismiss z-50 backdrop-blur-2xl"
             onClick={handleClick}
         >
-            <AiOutlineClose className='fixed top-8 right-8 text-2xl dismiss cursor-pointer hover:animate-spin' onClick={handleClick}/>
-            <form className="w-full max-w-lg bg-white p-16 shadow">
+            <AiOutlineClose
+                className="fixed top-8 right-8 text-2xl dismiss cursor-pointer hover:animate-spin"
+                onClick={handleClick}
+            />
+            {/* <form className="w-full max-w-lg bg-white p-16 shadow">
                 <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label className="block font-serif tracking-wide text-navy text-xs mb-2 text-xl">
@@ -91,7 +95,14 @@ const ContactModal = ({ setShowContact }: Props) => {
                     </div>
                     <div className="md:w-2/3"></div>
                 </div>
-            </form>
+            </form> */}
+            <div className="bg-azul p-16 flex flex-col justify-center items-center gap-8 rounded-sm">
+                <img src={mail3d} alt="" className="w-full md:-my-32 -my-16" />
+                <h1 className="md:text-6xl text-4xl font-serif">Hit me up!</h1>
+                <p className="md:text-2xl text-xl text-white">
+                    <a href="mailto:someone@example.com">max@maxflores.dev</a>
+                </p>
+            </div>
         </motion.div>
     );
 };

@@ -20,7 +20,7 @@ const Sidebar = ({ pro }: Project) => {
 
             {/* STACK */}
 
-            <div className="pb-4 flex flex-wrap items-center md:(pb:16 py-16 block)">
+            <div className="pb-4 md:flex hidden flex-col justify-start flex-wrap items-start md:(pb:16 py-16 block)">
                 <h3 className="text-2xl font-serif pr-4 pb-6">Stack</h3>
                 <div className="text-xs flex-wrap flex flex-row gap-4pt-4 md:(flex-col)">
                     {pro?.tech_stacks &&
@@ -43,7 +43,7 @@ const Sidebar = ({ pro }: Project) => {
 
             {/* LINKS */}
 
-            <div className="flex gap-0 my-0 md:(my-16 justify-start) children:(bg-off py-2 px-4 text-sm) rounded-sm justify-end items-center font-serif text-navy">
+            <div className="flex justify-center gap-0 my-0 md:(my-16 justify-start) children:(bg-navy text-white py-2 px-4 text-sm) rounded-sm justify-end items-center font-serif text-navy">
                 <a className="hover:bg-azul" href={pro.Github}>
                     <div className="flex items-center gap-2">
                         <BsGithub />

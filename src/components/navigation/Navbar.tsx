@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/dev-14-08.svg';
 import ContactModal from '../modals/ContactModal';
 import { CgMenu } from 'react-icons/cg';
+import ModalMenu from '../modals/ModalMenu';
 
 type Props = {};
 
@@ -27,7 +28,7 @@ const Navbar = (props: Props) => {
 
     return (
         <>
-            <div className="flex justify-between items-center z-50 md:px-8 md:py-8 p-2 absolute top-0 w-full">
+            <div className="flex justify-between items-center z-50 md:px-8 md:py-8 p-4 absolute top-0 w-full">
                 <Link to="/">
                     <img
                         src={logo}
@@ -35,7 +36,7 @@ const Navbar = (props: Props) => {
                         className="md:w-16 w-12  top-0 hover:(animate-pulse animate-duration-500)"
                     />
                 </Link>
-                <nav className="flex md:gap-8 gap-4 children:(text-white) items-center">
+                <nav className="flex gap-8 children:(text-white) items-center">
                     <div className="md:flex gap-8 hidden">
                         <Link
                             to="/about"
@@ -79,6 +80,7 @@ const Navbar = (props: Props) => {
                 </nav>
             </div>
             {showContact && <ContactModal setShowContact={setShowContact} />}
+            {modalMenu && <ModalMenu show={setModalMenu}/>}
         </>
     );
 };

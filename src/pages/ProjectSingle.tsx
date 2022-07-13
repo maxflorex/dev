@@ -26,7 +26,7 @@ const ProjectSingle = (props: Props) => {
     }, []);
 
     return (
-        <div>
+        <div className=''>
             <Header project={pro} />
             <div className="w-auto flex flex-wrap gap-4 items-center justify-center children:(list-none font-serif bg-off p-2 rounded-sm) text-xs container mx-auto py-6 -m-10">
                 <h2 className="!bg-azul text-off p-2 rounded-sm">My Role:</h2>

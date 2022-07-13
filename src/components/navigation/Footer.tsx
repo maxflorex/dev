@@ -1,4 +1,4 @@
-import logoMx2 from '../../assets/dev-14-11.svg';
+import logoMx2 from '../../assets/dev-14-03.svg';
 
 type Props = {};
 
@@ -11,7 +11,7 @@ const Footer = (props: Props) => {
                 <img
                     src={logoMx2}
                     alt="Logo Max"
-                    className="w-16"
+                    className="w-32"
                 />
             </div>
         </div>
